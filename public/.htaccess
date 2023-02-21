@@ -1,0 +1,12 @@
+#digunakan agar menghindari adambigu folder di public
+Options -Multiviews
+
+#mengaktifkan fungsi rewrite htaccess
+RewriteEngine On
+
+#memberikan kondisi untuk menghindari nama folder dan file yang sama dengan controller
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#aturan untuk menulis ulang url
+RewriteRule ^(.*)$ index.php?url=$1 [L]
