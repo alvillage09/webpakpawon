@@ -1,5 +1,6 @@
 <?php
 class App {
+    //controller default yang dipanggil
     protected $folder = 'Home';
     protected $controller = 'HomeController';
     protected $method = 'index';
