@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-    <!-- mengambil data yang di parsing dari controller (data berupa array) -->
-    <?php foreach ($data['user'] as $usr) {?>
-        <ul>
-            <li>Nama : <?= $usr['user']; ?> </li>
-            <li>Password : <?= hash('sha256',$usr['password']); ?> </li>
-        </ul>
-    <?php }?>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Example Card</h5>
+                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                    </div>
+                </div>
+            </div>
 
-</body>
-</html>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Example Card</h5>
+                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
