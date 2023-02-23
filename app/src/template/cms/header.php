@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?= BASEURL; ?>/cms/img/favicon.png" rel="icon">
+  <link href="<?= BASEURL; ?>/img/LogoPakPawon.png" rel="icon">
   <link href="<?= BASEURL; ?>/cms/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

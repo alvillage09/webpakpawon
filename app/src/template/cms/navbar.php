@@ -4,8 +4,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="<?= BASEURL; ?>" class="logo d-flex align-items-center">
-        <img src="<?= BASEURL; ?>/cms/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <img src="<?= BASEURL; ?>/img/LogoPakPawon.png" alt="">
+        <span class="d-none d-lg-block">Pak Pawon</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
