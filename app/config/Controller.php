@@ -1,5 +1,7 @@
 <?php
 
+namespace app\config;
+
 class Controller {
 
     //fungsi untuk view
@@ -14,13 +16,14 @@ class Controller {
         //untuk memanggil file model 
         require_once '../app/src/'.$model. '.php';
 
+        var_dump($model);
         //memecah $model kedalam array
-        $mdl = explode('/', $model);
+        $mdlarr = explode('/', $model);
         //memanggil data array paling akhir
-        $mdl = end($mdl);
-
+        $nmspc = 'app\src\\'.reset($mdlarr).'\\'.end($mdlarr);
+        
         //mengembalikan sekaligus meninstansiasi objek dari clas model
-        return new $mdl;
+        return new $nmspc;
     }
 
     //fungsi untuk view template cms

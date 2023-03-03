@@ -1,6 +1,9 @@
 <?php
 
-class DAtabase {
+namespace app\config;
+use PDO, PDOException;
+
+class Database {
     //mendefinisikan properti untuk koneksi
     private $host = DB_HOST;
     private $user = DB_USER;

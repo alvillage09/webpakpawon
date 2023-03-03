@@ -4,6 +4,7 @@ class App {
     protected $folder = 'Home';
     protected $controller = 'HomeController';
     protected $method = 'index';
+    protected $namespace;
     protected $params = [];
 
     public function __construct()
@@ -15,12 +16,13 @@ class App {
             if(file_exists('../app/src/'.$url[0].'/'.$url[0].'Controller.php')){
                 $this->folder = ucwords($url[0]);
                 $this->controller = ucwords($url[0]).'Controller';
+                $this->namespace = 'app\src\\'.$this->folder.'\\'.$this->controller;
                 unset($url[0]);
             }
         }
-        
+        $this->namespace = 'app\src\\'.$this->folder.'\\'.$this->controller;
         require_once '../app/src/'.$this->folder.'/'.$this->controller.'.php';
-        $this->controller = new $this->controller;
+        $this->controller = new $this->namespace;
 
         //untuk mengecek method
         if( isset($url[1]) ){

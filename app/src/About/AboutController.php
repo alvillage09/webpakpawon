@@ -1,5 +1,7 @@
 <?php
+namespace app\src\About;
 
+use app\config\Controller;
 class AboutController extends Controller{
 
     public function index()

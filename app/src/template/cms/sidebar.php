@@ -13,27 +13,22 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Pengguna</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-people"></i><span>Pengguna</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
+              <i class="bi bi-circle"></i><span>Peranan</span>
             </a>
           </li>
           <li>
             <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
+              <i class="bi bi-circle"></i><span>Pegawai</span>
             </a>
           </li>
           <li>
             <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+              <i class="bi bi-circle"></i><span>Pelanggan</span>
             </a>
           </li>
           
@@ -42,7 +37,7 @@
 
       <li class="nav-item">
         <a class="nav-link " href="<?= BASEURL; ?>">
-          <i class="bi bi-grid"></i>
+          <i class='bx bx-bowl-hot'></i>
           <span>Menu</span>
         </a>
       </li><!-- End Menu Nav -->
@@ -54,12 +49,12 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+              <i class="bi bi-circle"></i><span>Pesanan</span>
             </a>
           </li>
           <li>
             <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+              <i class="bi bi-circle"></i><span>Pembayaran</span>
             </a>
           </li>
         </ul>

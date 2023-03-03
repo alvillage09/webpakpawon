@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Example Card</h5>
-                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                        <p>Coba</p>
                     </div>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Example Card</h5>
-                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                        <p>contoh</p>
                     </div>
                 </div>
             </div>

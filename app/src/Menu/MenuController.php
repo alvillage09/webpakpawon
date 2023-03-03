@@ -1,5 +1,8 @@
 <?php
 
+namespace app\src\Menu;
+
+use app\config\Controller;
 class MenuController extends Controller{
     
     public function index()
