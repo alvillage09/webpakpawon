@@ -36,7 +36,7 @@
       </li><!-- End User Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="<?= BASEURL; ?>">
+        <a class="nav-link " href="<?= BASEURL; ?>/menu">
           <i class='bx bx-bowl-hot'></i>
           <span>Menu</span>
         </a>

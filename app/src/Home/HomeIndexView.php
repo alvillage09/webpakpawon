@@ -4,7 +4,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Example Card</h5>
+                        <h5 class="card-title"><?= $data["user_name"] ?></h5>
                         <p>Coba</p>
                     </div>
                 </div>

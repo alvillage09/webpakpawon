@@ -1,8 +1,7 @@
 <?php
-
 namespace app\config;
-use PDO, PDOException;
 
+use PDO, PDOException;
 class Database {
     //mendefinisikan properti untuk koneksi
     private $host = DB_HOST;
@@ -80,5 +79,10 @@ class Database {
         //eksekusi queri dan menampilkan data query yang hanya sesuai queri
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function count()
+    {
+        return $this->stmt->rowCount();
     }
 }

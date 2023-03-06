@@ -1,9 +1,5 @@
 <?php
-
-namespace app\src\Home;
-
 use app\config\Database;
-
 class HomeModel {
 
     //untuk inisiasi properti yang digunakan

@@ -22,7 +22,6 @@
                         <p class="text-center small">Enter your username & password to login</p>
                     </div>
                     <?php 
-                        session_start();
                         if (isset($_SESSION['error'])) {
                             if ( $_SESSION['error'] == true )
                             {
@@ -59,7 +58,7 @@
                             <button class="btn btn-primary w-100" type="submit">Login</button>
                         </div>
                         <div class="col-12">
-                            <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
+                            <p class="small mb-0">Belum Memiliki Akun? <a href="<?= BASEURL; ?>/register">Buat akun baru</a></p>
                         </div>
                     </form>
 
