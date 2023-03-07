@@ -1,9 +1,9 @@
 <div class="pagetitle">
-    <h1>Menu</h1>
+    <h1>Peranan</h1>
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/menu">Menu</a></li>
-        <li class="breadcrumb-item active">Menu Makanan</li>
+        <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/role">Pengguna</a></li>
+        <li class="breadcrumb-item active">Peranan</li>
     </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -20,45 +20,24 @@
                     <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Tambah Data Menu</h5>
+                            <h5 class="modal-title">Tambah Data Peranan</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <!-- Custom Styled Validation -->
-                            <form class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/menu/store" method="post">
+                            <form class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/role/store" method="post">
                                 <div class="col-12">
-                                    <label for="menu_name" class="form-label">Nama Menu</label>
-                                    <input type="text" class="form-control" id="menu_name" name="menu_name" placeholder="Masukan Nama Menu" required>
+                                    <label for="role_name" class="form-label">Nama Peranan</label>
+                                    <input type="text" class="form-control" id="role_name" name="role_name" placeholder="Masukan Nama Peran" required>
                                     <div class="valid-feedback">
-                                        Nama Menu Valid!
+                                        Nama Peran Valid!
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="menu_stock" class="form-label">Stok</label>
-                                    <input type="text" class="form-control" id="menu_stock" name="menu_stock" placeholder="Masukan Stok" required>
+                                    <label for="role_desc" class="form-label">Deskripsi Peranan</label>
+                                    <input type="text" class="form-control" id="role_desc" name="role_desc" placeholder="Masukan Deskripsi Peran" required>
                                     <div class="valid-feedback">
-                                        Stok Valid!
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="menu_price" class="form-label">Stok</label>
-                                    <input type="text" class="form-control" id="menu_price" name="menu_price" placeholder="Masukan Harga" required>
-                                    <div class="valid-feedback">
-                                        Harga Valid!
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="menu_image" class="form-label">Unggah Gambar</label>
-                                    <input type="file" class="form-control" id="menu_image" name="menu_image" required>
-                                    <div class="valid-feedback">
-                                        Harga Valid!
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="menu_desc" class="form-label">Deskripsi Menu</label>
-                                    <input type="text" class="form-control" id="menu_desc" name="menu_desc" placeholder="Masukan Deskripsi Menu" required>
-                                    <div class="valid-feedback">
-                                        Deskripsi Menu Valid
+                                        Deskripsi Peran Valid
                                     </div>
                                 </div>
                         </div>
@@ -81,60 +60,52 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Gambar Menu</th>
-                        <th scope="col">Nama Menu</th>
-                        <th scope="col">Stok Menu</th>
-                        <th scope="col">Harga Menu</th>
-                        <th scope="col">Deskripsi Menu</th>
+                        <th scope="col">Nama Peranan</th>
+                        <th scope="col">Deskripsi Peranan</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php 
                     $no = 0;
-                    foreach ($data['dataMenu'] as $menu) {
+                    foreach ($data['dataRole'] as $role) {
                         $no +=1;
                 ?>
                     <tr>
                         <th scope="row"><a href="#"><?= $no ?></a></th>
+                        <td><?= $role['role_name'] ?></a></td>
+                        <td><?= $role['role_desc'] ?></td>
                         <td>
-                            <img src="<?= BASEURL; ?>/img/menu/<?= $menu['menu_image'] ?>" alt="logo" class="rounded" style="width: 150px;">
-                        </td>
-                        <td><?= $menu['menu_name'] ?></a></td>
-                        <td><?= $menu['menu_stock'] ?></a></td>
-                        <td><?= $menu['menu_price'] ?></a></td>
-                        <td><?= $menu['menu_desc'] ?></td>
-                        <td>
-                            <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#formUpdateModal<?= $menu['menu_id'] ?>">
+                            <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#formUpdateModal<?= $role['role_id'] ?>">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            <button type="button" class="btn bg-danger" data-bs-toggle="modal" data-bs-target="#formDeleteModal<?= $menu['menu_id'] ?>">
+                            <button type="button" class="btn bg-danger" data-bs-toggle="modal" data-bs-target="#formDeleteModal<?= $role['role_id'] ?>">
                                 <i class="bi bi-trash"></i>
                             </button>
 
 
                             <!-- update Modal -->
-                            <div class="modal fade" id="formUpdateModal<?= $menu['menu_id'] ?>" tabindex="-1">
+                            <div class="modal fade" id="formUpdateModal<?= $role['role_id'] ?>" tabindex="-1">
                                 <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Edit Data Menu</h5>
+                                        <h5 class="modal-title">Edit Data Peranan</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Custom Styled Validation -->
-                                        <form id="formUpdate<?= $menu['menu_id'] ?>" class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/menu/update/<?= $menu['menu_id'] ?>" method="post">
-                                            <input type="hidden" class="form-control" id="menu_id" name="menu_id" value="<?= $menu['menu_id'] ?>" placeholder="Masukan Nama Peran" required>
+                                        <form id="formUpdate<?= $role['role_id'] ?>" class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/role/update/<?= $role['role_id'] ?>" method="post">
+                                            <input type="hidden" class="form-control" id="role_id" name="role_id" value="<?= $role['role_id'] ?>" placeholder="Masukan Nama Peran" required>
                                             <div class="col-12">
-                                                <label for="menu_name" class="form-label">Nama Menu</label>
-                                                <input type="text" class="form-control" id="menu_name" name="menu_name" value="<?= $menu['menu_name'] ?>" placeholder="Masukan Nama Peran" required>
+                                                <label for="role_name" class="form-label">Nama Peranan</label>
+                                                <input type="text" class="form-control" id="role_name" name="role_name" value="<?= $role['role_name'] ?>" placeholder="Masukan Nama Peran" required>
                                                 <div class="valid-feedback">
                                                     Nama Peran Valid!
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <label for="menu_desc" class="form-label">Deskripsi Menu</label>
-                                                <input type="text" class="form-control" id="menu_desc" name="menu_desc" value="<?= $menu['menu_desc'] ?>" placeholder="Masukan Deskripsi Peran" required>
+                                                <label for="role_desc" class="form-label">Deskripsi Peranan</label>
+                                                <input type="text" class="form-control" id="role_desc" name="role_desc" value="<?= $role['role_desc'] ?>" placeholder="Masukan Deskripsi Peran" required>
                                                 <div class="valid-feedback">
                                                     Deskripsi Peran Valid
                                                 </div>
@@ -142,7 +113,7 @@
                                     </div>
                                     <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                            <button type="submit" class="btn btn-primary" form="formUpdate<?= $menu['menu_id'] ?>">Ubah</button>
+                                            <button type="submit" class="btn btn-primary" form="formUpdate<?= $role['role_id'] ?>">Ubah</button>
                                         </form>
                                         <!-- End Custom Styled Validation -->
                                     </div>
@@ -151,7 +122,7 @@
                             </div><!-- End update Modal-->
                             
                             <!-- delete Modal -->
-                            <div class="modal fade" id="formDeleteModal<?= $menu['menu_id'] ?>" tabindex="-1">
+                            <div class="modal fade" id="formDeleteModal<?= $role['role_id'] ?>" tabindex="-1">
                                 <div class="modal-dialog modal-sm">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -162,7 +133,7 @@
                                             Yakin ingin menghapus data?
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="<?= BASEURL; ?>/menu/delete/<?= $menu['menu_id'] ?>" method="post">
+                                            <form action="<?= BASEURL; ?>/role/delete/<?= $role['role_id'] ?>" method="post">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                             </form>

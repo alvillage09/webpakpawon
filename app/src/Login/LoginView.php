@@ -8,7 +8,7 @@
 
                 <div class="d-flex justify-content-center py-4">
                     <a href="index.html" class="logo d-flex align-items-center w-auto">
-                    <img src="<?= BASEURL; ?>/img/LogoPakPawon.png" alt="">
+                    <img src="<?= BASEURL; ?>/img/LogoPakPawon.png" alt="logo">
                     <span class="d-none d-lg-block">Pak Pawon</span>
                     </a>
                 </div><!-- End Logo -->

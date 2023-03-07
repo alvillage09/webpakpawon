@@ -3,6 +3,7 @@
 namespace app\src\Menu;
 
 use app\config\Controller;
+use app\config\Flasher;
 use app\config\Session;
 class MenuController extends Controller{
 
@@ -19,7 +20,7 @@ class MenuController extends Controller{
         $data['title'] = 'Menu';
         if(array_key_exists('employee_id', $_SESSION)){
             
-            $data['employee_id'] = $this->session->getValue('employee_id');
+            $data['dataMenu'] = $this->model('Menu/MenuModel')->getAll();
             $this->viewCMS('Menu/MenuIndexViewCMS',$data);
         }
         else{
@@ -28,18 +29,43 @@ class MenuController extends Controller{
         }
     }
 
-    public function store()
-    {
-        
+    public function store(){
+        var_dump($_POST);
+        // if( $this->model('Menu/MenuModel')->storeData($_POST) > 0 ){
+        //     Flasher::setFlash('Peranan', 'berhasil', 'ditambahkan', 'success');
+        //     header('Location: '.BASEURL.'/menu');
+        //     exit;
+        // }
+        // else{
+        //     Flasher::setFlash('Peranan', 'gagal', 'ditambahkan', 'danger');
+        //     header('Location: '.BASEURL.'/menu');
+        //     exit;
+        // }
     }
 
-    public function update()
-    {
-
+    public function update($id){
+        if( $this->model('Menu/MenuModel')->updateData($_POST) > 0 ){
+            Flasher::setFlash('Peranan', 'berhasil', 'dirubah', 'success');
+            header('Location: '.BASEURL.'/menu');
+            exit;
+        }
+        else{
+            Flasher::setFlash('Peranan', 'gagal', 'dirubah', 'danger');
+            header('Location: '.BASEURL.'/menu');
+            exit;
+        }
     }
 
-    public function delete()
-    {
-
+    public function delete($id){
+        if( $this->model('Menu/MenuModel')->deleteData($id) > 0 ){
+            Flasher::setFlash('Peranan', 'berhasil', 'dihapus', 'success');
+            header('Location: '.BASEURL.'/menu');
+            exit;
+        }
+        else{
+            Flasher::setFlash('Peranan', 'gagal', 'dihapus', 'danger');
+            header('Location: '.BASEURL.'/menu');
+            exit;
+        }
     }
 }
