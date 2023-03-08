@@ -24,6 +24,7 @@ class LoginController extends Controller{
         else{
             $this->view('template/cms/header',$data);
             $this->view('Login/LoginView',$data);
+            $this->view('Login/LoginScript');
             $this->view('template/cms/scriptDefault');
         }
     }

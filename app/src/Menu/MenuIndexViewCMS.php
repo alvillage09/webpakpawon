@@ -25,7 +25,7 @@
                         </div>
                         <div class="modal-body">
                             <!-- Custom Styled Validation -->
-                            <form class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/menu/store" method="post">
+                            <form class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/menu/store" method="post" enctype="multipart/form-data">
                                 <div class="col-12">
                                     <label for="menu_name" class="form-label">Nama Menu</label>
                                     <input type="text" class="form-control" id="menu_name" name="menu_name" placeholder="Masukan Nama Menu" required>
@@ -35,14 +35,14 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="menu_stock" class="form-label">Stok</label>
-                                    <input type="text" class="form-control" id="menu_stock" name="menu_stock" placeholder="Masukan Stok" required>
+                                    <input type="number" class="form-control" id="menu_stock" name="menu_stock" placeholder="Masukan Stok" required>
                                     <div class="valid-feedback">
                                         Stok Valid!
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="menu_price" class="form-label">Stok</label>
-                                    <input type="text" class="form-control" id="menu_price" name="menu_price" placeholder="Masukan Harga" required>
+                                    <label for="menu_price" class="form-label">Harga</label>
+                                    <input type="number" class="form-control" id="menu_price" name="menu_price" placeholder="Masukan Harga" required>
                                     <div class="valid-feedback">
                                         Harga Valid!
                                     </div>
@@ -51,7 +51,7 @@
                                     <label for="menu_image" class="form-label">Unggah Gambar</label>
                                     <input type="file" class="form-control" id="menu_image" name="menu_image" required>
                                     <div class="valid-feedback">
-                                        Harga Valid!
+                                        Gambar Valid!
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -74,7 +74,7 @@
             <!-- Data Table -->
             <div>
                 <?php
-                    app\config\Flasher::flash();
+                    app\config\Helper::flash();
                 ?>
             </div>
             <table class="table table-borderled datatable">
@@ -98,7 +98,7 @@
                     <tr>
                         <th scope="row"><a href="#"><?= $no ?></a></th>
                         <td>
-                            <img src="<?= BASEURL; ?>/img/menu/<?= $menu['menu_image'] ?>" alt="logo" class="rounded" style="width: 150px;">
+                            <img src="<?= BASEURL; ?>/img/menu/<?= $menu['menu_image'] ?>" alt="<?= $menu['menu_name'] ?>" class="rounded" style="width: 150px;">
                         </td>
                         <td><?= $menu['menu_name'] ?></a></td>
                         <td><?= $menu['menu_stock'] ?></a></td>
@@ -124,21 +124,47 @@
                                     <div class="modal-body">
                                         <!-- Custom Styled Validation -->
                                         <form id="formUpdate<?= $menu['menu_id'] ?>" class="row g-3 needs-validation" novalidate action="<?= BASEURL; ?>/menu/update/<?= $menu['menu_id'] ?>" method="post">
-                                            <input type="hidden" class="form-control" id="menu_id" name="menu_id" value="<?= $menu['menu_id'] ?>" placeholder="Masukan Nama Peran" required>
+                                            <input type="hidden" class="form-control" id="menu_id" name="menu_id" value="<?= $menu['menu_id'] ?>"  required>
+                                            <input type="hidden" class="form-control" id="current_menu_img" name="current_menu_img" value="<?= $menu['menu_image'] ?>"  required>
                                             <div class="col-12">
                                                 <label for="menu_name" class="form-label">Nama Menu</label>
-                                                <input type="text" class="form-control" id="menu_name" name="menu_name" value="<?= $menu['menu_name'] ?>" placeholder="Masukan Nama Peran" required>
+                                                <input type="text" class="form-control" id="menu_name" name="menu_name" value="<?= $menu['menu_name'] ?>"  required>
                                                 <div class="valid-feedback">
-                                                    Nama Peran Valid!
+                                                    Nama Menu Valid!
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="menu_stock" class="form-label">Stok</label>
+                                                <input type="number" class="form-control" id="menu_stock" name="menu_stock" value="<?= $menu['menu_stock'] ?>" required>
+                                                <div class="valid-feedback">
+                                                    Stok Valid!
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="menu_price" class="form-label">Harga</label>
+                                                <input type="number" class="form-control" id="menu_price" name="menu_price" value="<?= $menu['menu_price'] ?>" required>
+                                                <div class="valid-feedback">
+                                                    Harga Valid!
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="menu_image" class="form-label">Unggah Gambar</label>
+                                                <div class="container my-2">
+                                                    <img src="<?= BASEURL; ?>/img/menu/<?= $menu['menu_image'] ?>" alt="<?= $menu['menu_name'] ?>" class="rounded" style="width: 150px;">
+                                                </div>
+                                                <input type="file" class="form-control" id="menu_image" name="menu_image" required>
+                                                <div class="valid-feedback">
+                                                    Gambar Valid!
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="menu_desc" class="form-label">Deskripsi Menu</label>
-                                                <input type="text" class="form-control" id="menu_desc" name="menu_desc" value="<?= $menu['menu_desc'] ?>" placeholder="Masukan Deskripsi Peran" required>
+                                                <input type="text" class="form-control" id="menu_desc" name="menu_desc" value="<?= $menu['menu_desc'] ?>"  required>
                                                 <div class="valid-feedback">
-                                                    Deskripsi Peran Valid
+                                                    Deskripsi Menu Valid
                                                 </div>
                                             </div>
+                                            
                                     </div>
                                     <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

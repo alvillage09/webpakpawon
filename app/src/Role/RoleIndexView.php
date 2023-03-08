@@ -53,7 +53,7 @@
             <!-- Data Table -->
             <div>
                 <?php
-                    app\config\Flasher::flash();
+                    app\config\Helper::flash();
                 ?>
             </div>
             <table class="table table-borderled datatable">

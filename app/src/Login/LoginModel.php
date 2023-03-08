@@ -2,6 +2,7 @@
 
 use app\config\Session;
 use app\config\Database;
+use app\config\Helper;
 class LoginModel {
 
     //untuk inisiasi properti yang digunakan
@@ -53,7 +54,7 @@ class LoginModel {
         }
         else
         {
-            $this->session->setValue('error', true); 
+            Helper::setFlash('Data', 'identitas pengguna atau kata sandi salah!', '', 'danger');
             return false;
         }
 
